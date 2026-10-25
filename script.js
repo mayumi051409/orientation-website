@@ -1,3 +1,26 @@
+async function sendRegistration(registration) {
+    await fetch("https://script.google.com/macros/s/AKfycbzDVwtP7bIQKM5aDpl8PjQaMEpmfXmQ4wWqZdjApWmrQRF022_5s_GB3HiqIgbHQQHG9w/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(registration)
+    });
+}
+
+async function syncOfflineRegistrations() {
+    let offlineRegistrations =
+        JSON.parse(localStorage.getItem("offlineRegistrations")) || [];
+
+    if (offlineRegistrations.length === 0) {
+        return;
+    }
+
+    for (const registration of offlineRegistrations) {
+        await sendRegistration(registration);
+    }
+
+    localStorage.removeItem("offlineRegistrations");
+}
+
 function registerUser() {
 
     let name = document.getElementById("name").value;
@@ -40,16 +63,26 @@ if (age < 1 || age > 120) {
     return;
 }
 
-    fetch("https://script.google.com/macros/s/AKfycbzDVwtP7bIQKM5aDpl8PjQaMEpmfXmQ4wWqZdjApWmrQRF022_5s_GB3HiqIgbHQQHG9w/exec", {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            phone: phone,
-            age: age
-        })
-    });
+  const registration = {
+    name: name,
+    email: email,
+    phone: phone,
+    age: age
+};
+
+if (navigator.onLine) {
+    sendRegistration(registration);
+} else {
+    let offlineRegistrations =
+        JSON.parse(localStorage.getItem("offlineRegistrations")) || [];
+
+    offlineRegistrations.push(registration);
+
+    localStorage.setItem(
+        "offlineRegistrations",
+        JSON.stringify(offlineRegistrations)
+    );
+}
 
   document.getElementById("successPopup").style.display = "flex";
   startConfetti();
@@ -121,3 +154,5 @@ function startConfetti() {
 
     animate();
 }
+
+window.addEventListener("online", syncOfflineRegistrations);
