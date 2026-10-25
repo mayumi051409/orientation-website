@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Orientation Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Orientation Registration</h1>
+
+        <p>Please enter your information below.</p>
+
+      <label>Full Name</label>
+<input type="text" id="name">
+
+<br><br>
+
+<label>Email</label>
+<input type="email" id="email">
+
+<br><br>
+
+<label>Phone Number</label>
+<input type="tel" id="phone">
+
+<br><br>
+
+<label>Age</label>
+<input type="number" id="age">
+
+        <br><br>
+
+        <button onclick="registerUser()">Register</button>
+
+<div id="successPopup" class="popup">
+    <div class="popup-box">
+        <h2>Registration Successful!</h2>
+        <p>Thank you for registering for the orientation.</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+    </div>
+
+<canvas id="confettiCanvas"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
