@@ -27,6 +27,7 @@ function registerUser() {
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
     let age = document.getElementById("age").value;
+    let contactPerson = document.getElementById("contactPerson").value;
 
     if (name === "") {
         alert("Please enter your name.");
@@ -58,6 +59,11 @@ if (age === "") {
     return;
 }
 
+if (contactPerson === "") {
+    alert("Please select a contact person.");
+    return;
+}
+
 if (age < 1 || age > 120) {
     alert("Please enter a valid age.");
     return;
@@ -67,7 +73,8 @@ if (age < 1 || age > 120) {
     name: name,
     email: email,
     phone: phone,
-    age: age
+    age: age,
+    contactPerson: contactPerson
 };
 
 if (navigator.onLine) {
