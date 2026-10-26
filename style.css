@@ -47,16 +47,11 @@ body {
     color: #174a9c;
 }
 
-
 /* HERO */
 
 .hero {
     min-height: 600px;
-    background: linear-gradient(
-        135deg,
-        #174a9c,
-        #2864c7
-    );
+    background: linear-gradient(135deg, #174a9c, #2864c7);
     display: flex;
     align-items: center;
     padding: 80px 7%;
@@ -97,13 +92,11 @@ body {
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
-    transition: 0.2s;
 }
 
 .hero-button:hover {
     transform: translateY(-2px);
 }
-
 
 /* GENERAL SECTIONS */
 
@@ -135,7 +128,6 @@ body {
     max-width: 700px;
 }
 
-
 /* ORIENTATION DETAILS */
 
 .light-section {
@@ -166,7 +158,6 @@ body {
 .details p {
     color: #666;
 }
-
 
 /* REGISTRATION */
 
@@ -227,13 +218,11 @@ button {
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 button:hover {
     background: #123b7d;
 }
-
 
 /* SUCCESS POPUP */
 
@@ -257,8 +246,6 @@ button:hover {
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: popupAnimation 0.3s ease;
 }
 
 .popup-box h2 {
@@ -274,7 +261,6 @@ button:hover {
     margin-top: 10px;
 }
 
-
 /* CONFETTI */
 
 #confettiCanvas {
@@ -286,22 +272,6 @@ button:hover {
     pointer-events: none;
     z-index: 2000;
 }
-
-
-/* ANIMATION */
-
-@keyframes popupAnimation {
-    from {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 
 /* MOBILE */
 
@@ -352,5 +322,4 @@ button:hover {
     .container {
         padding: 30px 20px;
     }
-
 }
