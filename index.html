@@ -2,53 +2,144 @@
 <html>
 
 <head>
-    <title>Orientation Registration</title>
+    <title>Orientation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <header class="navbar">
 
-        <h1>Orientation Registration</h1>
+        <div class="logo">
+            <span>ORIENTATION</span>
+        </div>
 
-        <p>Please enter your information below.</p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#orientation">Orientation</a>
+            <a href="#register">Register</a>
+        </nav>
 
-      <label>Full Name</label>
-<input type="text" id="name">
+    </header>
 
-<br><br>
 
-<label>Email</label>
-<input type="email" id="email">
+    <section id="home" class="hero">
 
-<br><br>
+        <div class="hero-content">
 
-<label>Phone Number</label>
-<input type="tel" id="phone">
+            <p class="hero-small">WELCOME TO OUR</p>
 
-<br><br>
+            <h1>Orientation Program</h1>
 
-<label>Age</label>
-<input type="number" id="age">
+            <p>
+                Learn more about us, discover what to expect,
+                and register for the orientation.
+            </p>
 
-        <br><br>
+            <a href="#register" class="hero-button">
+                Register Now
+            </a>
 
-        <button onclick="registerUser()">Register</button>
+        </div>
 
-<div id="successPopup" class="popup">
-    <div class="popup-box">
-        <h2>Registration Successful!</h2>
-        <p>Thank you for registering for the orientation.</p>
-        <button onclick="closePopup()">OK</button>
+    </section>
+
+
+    <section id="about" class="section">
+
+        <p class="section-label">ABOUT</p>
+
+        <h2>About Us</h2>
+
+        <p>
+            Learn more about our organization and what we do.
+            More information will be added here.
+        </p>
+
+    </section>
+
+
+    <section id="orientation" class="section light-section">
+
+        <p class="section-label">ORIENTATION</p>
+
+        <h2>Orientation Details</h2>
+
+        <div class="details">
+
+            <div>
+                <strong>Date</strong>
+                <p>To be announced</p>
+            </div>
+
+            <div>
+                <strong>Time</strong>
+                <p>To be announced</p>
+            </div>
+
+            <div>
+                <strong>Location</strong>
+                <p>To be announced</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="register" class="register-section">
+
+        <div class="container">
+
+            <p class="section-label">REGISTRATION</p>
+
+            <h2>Register for the Orientation</h2>
+
+            <p class="register-description">
+                Please enter your information below.
+            </p>
+
+            <label>Full Name</label>
+            <input type="text" id="name">
+
+            <label>Email</label>
+            <input type="email" id="email">
+
+            <label>Phone Number</label>
+            <input type="tel" id="phone">
+
+            <label>Age</label>
+            <input type="number" id="age">
+
+            <button onclick="registerUser()">Register</button>
+
+        </div>
+
+    </section>
+
+
+    <div id="successPopup" class="popup">
+
+        <div class="popup-box">
+
+            <h2>Registration Successful!</h2>
+
+            <p>
+                Thank you for registering for the orientation.
+            </p>
+
+            <button onclick="closePopup()">OK</button>
+
+        </div>
+
     </div>
-</div>
 
-    </div>
 
-<canvas id="confettiCanvas"></canvas>
+    <canvas id="confettiCanvas"></canvas>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
